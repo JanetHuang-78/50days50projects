@@ -23,6 +23,19 @@ body{
     margin-bottom: 50px;
     position: relative;
 }
+/*老師下在progress-container裡*/
+.progress-container::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+
+    transform: translateY(-50%);
+    background-color:rgb(184, 183, 183);
+    width:100%;
+    height: 2px;
+    z-index: -1;
+}
 .btn{
     color: white;
     font-size: 30px;
@@ -32,26 +45,13 @@ body{
     background-color: cornflowerblue;
 }
 
-/*老師下在progress-container裡*/
-.progress::before{
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    
-    transform: translateY(-50%);
-    background-color:rgb(184, 183, 183);
-    width:100%;
-    height: 2px;
-    z-index: -1;
-}
 .progress{
     position: absolute;
     left: 0;
     top: 50%;
     transform: translateY(-50%);
     background-color:cornflowerblue ;
-    width: 30%;
+    width: 0%;
     height: 6px;
     z-index: -1;
     /* transform: translateY(10px); */
