@@ -1,0 +1,68 @@
+*{
+box-sizing: border-box;
+}
+body{
+    font-family: 'roboto',sans-serif;
+    margin: 0;
+    /*要記得設定width & height 所以flex才有空間在裡面活動*/
+    width: 100vw;
+    height: 100vh;
+    /*100vh表示全部高度*/
+    /*vh = view height, vw = view width*/
+    
+    display: flex;
+    
+    /*所有圖片被container包住所以flex-direction無法作用*/
+    /*但是flex-content, align-items還是有用 好奇怪*/
+    
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    
+    overflow: hidden;
+}
+.container{
+    display: flex;
+    /* flex-grow: 1; */
+
+    
+    width: 90vw;
+    height: 80vh
+}
+.panel{
+    
+    /* height: 80vh; */
+    border-radius: 30px;
+    margin: 5px;
+    flex: 0.5;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+.panel.active{
+    border-radius: 30px;
+    flex: 5;
+}
+h3{
+    font-size: 25px;
+    color: red;
+    position: absolute;
+    bottom: 30px;
+    left:20px;
+    opacity: 0;
+}
+.panel.active h3{
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.4s;
+}
+
+@media screen and (max-width: 500px){
+    .container{
+        width: 100vw;
+    }
+       .panel:nth-last-of-type(4),.panel:nth-last-of-type(5){
+           display: none;
+       }
+}

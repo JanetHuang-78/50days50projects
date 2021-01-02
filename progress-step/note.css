@@ -1,0 +1,94 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    /*讓1234至中*/
+    text-align: center;
+}
+.progress-container{
+    width: 40vw;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+
+    /*relative的目的是為了以後控制progress的線*/
+    position: relative;
+}
+.btn{
+    font-size: 30px;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 10px;
+    background-color: cornflowerblue;
+}
+
+/*灰線*/
+.progress::before{
+    content: "";
+    
+    /*用position的width & height來控制線的位置*/
+    position: absolute;
+    left: 10%;
+    top: 50%;
+    
+    /*線的長度與寬度*/
+    width:80%;
+    height: 5px;
+
+    transform: translateY(-50%);
+    background-color:gray;
+    z-index: -1;
+}
+
+/*藍線*/
+.progress{
+    /*50%from the top, */
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    background-color:cornflowerblue ;
+    width: 20%;
+    height: 5px;
+    z-index: -1;
+}
+.circle.active{
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    background-color: cyan;
+    border-radius: 50%;
+    border: 3px solid cornflowerblue;
+    /*設定將1234放在至中的位置*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.circle{
+    font-size: 30px;
+    width: 50px;
+    height: 50px;
+    /* background-color: cyan; */
+    border-radius: 50%;
+    /* border: 3px solid cornflowerblue; */
+    /*設定將1234放在至中的位置*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*
+transform的屬性：
+transform: rotate 旋轉
+transform: translateX/translateY 根據x,y軸調整位置
+transform: skew 斜角度
+transform: scaleX/scaleY 照比例放大
+*/

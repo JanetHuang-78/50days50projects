@@ -1,0 +1,52 @@
+/*此css是搭配index.html第二段code*/
+
+*{
+    box-sizing: border-box;
+}
+body{
+    height:100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    height: 80vh;
+    width: 90vw;
+    
+}
+.panel{
+    border-radius: 30px;
+    margin: 10px;
+    flex: 0.5;
+    position: relative;
+}
+
+.active{
+    background: url(img/p5.jpg) no-repeat center;
+    background-size: auto 100%;
+    flex: 3;
+}
+.one{
+    background: url(img/p1.jpg) no-repeat center;
+    background-size: auto 100%;
+}
+.two{
+    background: url(img/p2.jpg) no-repeat center;
+    background-size: auto 100%;
+}
+.three{
+    background: url(img/p3.jpg) no-repeat center;
+    background-size: auto 100%;
+}
+.four{
+    background: url(img/p4.jpg) no-repeat center;
+    background-size: auto 100%;
+}
+h3{
+    font-size: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+}
+

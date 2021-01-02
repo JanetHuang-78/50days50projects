@@ -1,0 +1,83 @@
+/*此file紀錄code的原因*/
+
+*{
+    box-sizing: border-box;
+    }
+    body{
+        font-family: 'roboto',sans-serif;
+        margin: 0;
+        /*要記得設定width & height 所以flex才有空間在裡面活動*/
+        width: 100vw;
+        height: 100vh;
+        /*100vh表示全部高度*/
+        /*vh = view height, vw = view width*/
+        
+        display: flex;
+        
+        /*所有圖片被container包住所以flex-direction無法作用*/
+        /*但是flex-content, align-items還是有用 好奇怪?*/
+        
+        /* flex-direction: column; */
+        justify-content: center;
+        align-items: center;
+        
+        overflow: hidden;
+    }
+    .container{
+        display: flex;
+        /*使用flex時，width一定要設，否則不夠寬度*/
+        /*width, height設在 container or panel*/
+        /*好像都可以?*/
+        width: 90vw;
+        height: 80vh;
+    }
+    .panel{
+        /* height: 80vh; */
+        border-radius: 30px;
+        margin: 5px;
+        flex: 0.5;
+
+        /*顯示圖片中央位置*/
+        background-position: center;
+        background-repeat: no-repeat;
+        /*cover就會cut/stretch 圖片蓋住整個區塊*/
+        background-size: cover;
+        position: relative;
+
+        /*transition設定在flex上面 時間是0.7 方式是ease-in*/
+        transition: flex 0.7s ease-in;
+    }
+    .panel.active{
+        /*當其他flex=0.5時，flex=5 比其他flex=0.5大十倍*/
+        /*所以圖片佔據比其他圖大十倍*/
+        flex: 5;
+    }
+    h3{
+        font: 25px;
+        color: lightgray;
+        /*在panel設定relative，h3設定absolute*/
+        /*所以可以自由移動h3的字*/
+        position: absolute;
+        bottom: 30px;
+        left:20px;
+
+        /*平時字體不會出現*/
+        opacity: 0;
+    }
+    /*當圖片被展開時，字體會出現*/
+    .panel.active h3{
+        opacity: 1;
+        /*針對opacity的速度*/
+        transition: opacity 0.3s ease-in 0.4s;
+    }
+
+    @media screen and (max-width: 500px){
+        /*螢幕變小時將width變寬*/
+        .container{
+            width: 100vw;
+        }
+        /*將第四第五項拿走*/
+           .panel:nth-last-of-type(4),.panel:nth-last-of-type(5){
+               display: none;
+           }
+    }
