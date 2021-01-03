@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+    background-color: silver;
+}
+.container{
+    width: 100vw;
+    min-height: 100vh;
+    background-color:gainsboro;
+    transition: transform 0.4s linear;
+    transform-origin: left top;
+}
+/* .container.show-nav{
+    transform: rotate(-20deg);
+} */
+.circle-container{
+    position: fixed;
+    left: -100px;
+    top: -100px;
+    width: 200px;
+    height: 200px;
+    /* background-color: wheat; */
+}
+.circle{
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: tomato;
+    transition: transform 0.4s linear;
+}
+.circle button{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background: transparent;
+    font-size: 25px;
+    color: white;
+    border: 0;
+}
+.content{
+    padding: 70px;
+}
+.circle button.open{
+    left: 60%;
+    top: 70%;
+}
+.circle button.close{
+    top: 70%;
+    left: 30%;
+    transform: rotate(-20dec);
+    transform-origin: left top;
+}
+.content img{
+    max-width: 100%;
+}
+p{
+    font-size: 20px;
+    line-height: 1.5em;
+}

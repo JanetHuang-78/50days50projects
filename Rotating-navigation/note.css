@@ -1,0 +1,99 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    
+    background-color: lightslategray;
+    overflow-x: hidden;
+}
+.container{
+    background-color: lightgray;
+    
+    /*以左上的角為中心璇轉*/
+    /*如果沒有設定左上，default 都是中間點(50%/50%)*/
+    /*為何transform-origin會設在container而非container.show-nav?*/
+    /*可能是container裡設了transition 需要知道transform-origin的中心點為何?*/
+    transform-origin: left top;
+    
+    /*背景會旋轉*/
+    /*針對transform 會 transition*/
+    transition: transform 0.4s linear;
+    
+    width: 100vw;
+    min-height: 100vh;
+    padding: 50px;
+}
+.container.show-nav{
+    transform: rotate(-20deg);
+}
+
+.circle-container{
+    /*fixed會把item從本來的flow取出*/
+    position: fixed;
+
+    /*會往左上挪移100，只會看見1/4的圓*/
+    top: -100px;
+    left: -100px;
+
+    width: 300px;
+    height: 300px;
+}
+.circle{
+    /*這裡是relative，兩個button是absolute好調整位置*/
+    position: relative;
+
+    width: 200px;
+    height: 200px;
+    background-color: paleturquoise;
+    border: 0;
+    border-radius: 50%;
+    
+    /*在circle裡，會有一個transition的動作*/
+    /*針對transform*/
+    /*這個transform會發生在某一個動作時(所以在下面的button)*/
+    transition: transform 0.4s linear;
+}
+
+.circle button{
+    /*在circle-container裡設了relative*/
+    /*要移動button就用absolute*/
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    
+    /*高度100px，字體在中間*/
+    height: 100px;
+    
+    background: transparent;
+    border:none;
+    font-size: 25px;
+    color: white;
+}
+
+.circle button:focus{
+    outline: none;
+}
+.circle button.open{
+    left: 60%;
+}
+.circle button.close{
+    top: 60%;
+    transform: rotate(90deg);
+    transform-origin: top left;
+}
+
+
+li{
+    list-style-type: none;
+}
+
+
+.content img{
+    /*100% of its container*/
+    max-width: 100%;
+}
+
+/*outline: (similar to border, outline is outside the borders)
+used for :focus styles by default. Remember if you ever remove outline styles, 
+like a:focus { outline: 0; }, you need to add them back in using some other 
+kind of visually distinct style.*/
