@@ -10,11 +10,15 @@
     <title>Rotating Navigation</title>
 </head>
 <body>
-    <div class="container show-nav">
+    <div class="container">
         <div class="circle-container">
             <div class="circle">
-                <button class="close"><i class="far fa-times-circle"></i></button>
-                <button class="open"><i class="fas fa-bars"></i></button>
+                <button id="close">
+                    <i class="far fa-times-circle"></i>
+                </button>
+                <button id="open">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>    
         </div>
         <div class="content">
@@ -28,16 +32,19 @@
                 placeat quae incidunt facilis mollitia laborum, sapiente perspiciatis ipsum provident necessitatibus autem 
                 optio dolore illo sint doloremque, neque ipsam. Suscipit atque reprehenderit in possimus qui officiis maiores 
                 obcaecati quaerat!</p>
-            <img src="img/bigcat.jpg" alt="">
-            <h3></h3>
+                <h3>Cute Animal:</h3>
+                <img src="img/bigcat.jpg" alt="">
+            
         </div>
-        <nav>
-            <ul>
-                <li><i class="fas fa-home"></i> Home</li>
-                <li><i class="far fa-address-card"></i> About</li>
-                <li><i class="far fa-address-card"></i> Contact</li>
-            </ul>
-        </nav>
+        
     </div>
+    <nav>
+        <ul>
+            <li><i class="fas fa-home"></i> Home</li>
+            <li><i class="far fa-address-card"></i> About</li>
+            <li><i class="far fa-address-card"></i> Contact</li>
+        </ul>
+    </nav>   
+     <script src="script.js"></script>
 </body>
 </html>

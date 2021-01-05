@@ -4,7 +4,14 @@
 body{
     
     background-color: lightslategray;
+
+    /*overflow:hidden & overflow-x:hidden 的差異*/
+    /*在body設overflow:hidden 時，頁面裡超過的部分會不見也沒有scroll*/
     overflow-x: hidden;
+    /*The overflow-x property specifies whether to clip the content, 
+    add a scroll bar, or display overflow content of a block-level element, 
+    when it overflows at the left and right edges.*/
+    /* overflow-y property to determine clipping at the top and bottom edges*/
 }
 .container{
     background-color: lightgray;
@@ -86,12 +93,52 @@ body{
 li{
     list-style-type: none;
 }
-
-
+.content{
+    max-width: 1000px;
+    margin: 50px auto;
+}
 .content img{
-    /*100% of its container*/
+    /*content寬度最多1000px，所以圖片會自動縮進1000px裡*/
     max-width: 100%;
 }
+
+p{
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+
+nav{
+    position: fixed;
+    left: 0;
+    bottom: 40px;
+    z-index: 10;
+}
+nav ul{
+    list-style-type: none;
+}
+nav ul li{
+    font-size: 20px;
+    padding: 5px;
+    text-transform:uppercase ;
+    color: white;
+    margin: 10px 0;
+    transform: translateX(-100%);
+    transition: transform 0.4s ease-in;
+}
+nav ul li i{
+    font-size: 20px;
+    margin-right: 10px;
+}
+nav ul li+li{
+    margin-left: 15px;
+    transform: translateX(-150%);
+}
+nav ul li+li+li{
+    margin-left: 30px;
+    transform: translateX(-200%);
+}
+
 
 /*outline: (similar to border, outline is outside the borders)
 used for :focus styles by default. Remember if you ever remove outline styles, 

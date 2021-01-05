@@ -1,6 +1,15 @@
 *{
     box-sizing: border-box;
 }
-body{
+/*要設定width & height 時，body and html 都要同時設定！*/
+html,body{
+    background-color: lightskyblue;
+    width: 100%;
+    height: 100%;
     margin: 0;
+} 
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

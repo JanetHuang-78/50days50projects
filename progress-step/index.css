@@ -23,9 +23,11 @@ body{
     margin-bottom: 50px;
     position: relative;
 }
+
+/*灰線的位置*/
 /*老師下在progress-container裡*/
 .progress-container::before{
-    content: "";
+    content: "";/*:before 要留一個content = ''*/
     position: absolute;
     left: 0;
     top: 50%;

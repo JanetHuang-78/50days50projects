@@ -1,0 +1,32 @@
+*{
+    box-sizing: border-box;
+}
+body,html{
+    background-color: lightsteelblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.container{
+    position: relative;
+}
+.box{
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid lightgray;
+    /* transition: 2s;
+    transform: translateX(-100px); */
+    opacity: 1;
+}
+.search{
+    position: absolute;
+    top: 7px;
+    left: 80px;
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    
+}
