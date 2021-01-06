@@ -19,6 +19,7 @@
     /* display: block; */
     position: relative;
 }
+/*一開始設成90deg，是看不到圖片的*/
 .panel .back{
     transform: rotateY(90deg);
 }
@@ -31,6 +32,9 @@
 .panel:hover div.front{
     animation:twirl 0.3s ease-in forwards;
 }
+
+/*當滑鼠滑過panel時，包含有back的那一個div*/
+/*因為有reverse，所以.back會從90deg轉回0deg，就會看見了 */
 .panel:hover div.back{
     animation:twirl 0.3s 0.3s ease-out forwards reverse;
 }

@@ -12,21 +12,38 @@ body,html{
 .container{
     position: relative;
 }
-.box{
-    width: 100px;
+.container .box{
+    width: 20px;
     height: 30px;
-    border-radius: 10px;
+    border-radius: 5px;
     border: 1px solid lightgray;
-    /* transition: 2s;
-    transform: translateX(-100px); */
-    opacity: 1;
+    transition: width 0.4s;
+    outline: none;
+    /*transform: translateX(-100px); */
 }
-.search{
+.container .btn{
     position: absolute;
     top: 7px;
-    left: 80px;
+    left: -1px;
     width: 20px;
     height: 20px;
     background-color: white;
-    
+    background: transparent;
+    border: 0;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    outline: none;
+}
+/*當container是包含active class時，此時下的.box*/
+.container.active .box
+{
+    width: 120px
+}
+/*當container是包含active class時，此時下的.btn*/
+.container.active .btn{
+    transform: translateX(95px);
+    /* position: absolute;
+    left: 95px;
+    outline: none; */
+    outline: none;
 }
