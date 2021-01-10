@@ -1,0 +1,30 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* width: 100vw; */
+    height: 100vh;
+    overflow: hidden;
+}
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.bg::before{
+    content: "";
+    background-color: azure;
+}
+.bg{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url(img/Taiwan2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+}

@@ -1,0 +1,41 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    /*overflow 讓邊框在400% & -400%的在螢幕外看不到*/
+    overflow-x: hidden;
+    flex-direction: column; 
+    background-color: violet;
+    margin: 0;
+}
+p{
+    font-size: 45px;
+}
+
+.box{
+    font-size: 40px;
+    color:white;
+    border: 1px solid lightseagreen;
+    border-radius: 10px;
+    background-color: lightskyblue;
+    width: 300px;
+    height: 200px;
+    padding: 80px;
+    text-align: center;
+    margin: 5px;
+    transform: translateX(400%); 
+    transition: transform 0.5s ease;
+}
+.box.active{
+    transform: translateX(0px);
+}
+
+
+/*不知道為何方框無法從左邊滑出來?? */
+/* .box:nth-of-type(even){ 
+    transform: translateX(-400%);
+     transition: transform 0.5s ease; 
+} */
