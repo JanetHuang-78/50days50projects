@@ -1,0 +1,79 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: steelblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100vw;
+    height: 100vh;
+}
+.container{
+    padding: 10px 30px;
+    background-color:rgba(0, 0, 0, 0.5);
+    color: white;
+    border: 0;
+    border-radius: 10px;
+}
+p:first-child{
+    text-align: center;
+    /*padding-top: 10px, padding-left&right: 20px, padding-bottom: 30px*/
+    padding: 10px 20px 30px;
+    font-size: 30px;
+    margin: 20px;
+    margin-bottom: 10px;
+}
+.form-control{
+    padding: 15px;
+    /*margin-top: 10px, margin-left&right:10px,margin-bottom:30px*/
+    margin: 10px 10px 30px ;
+    position: relative;
+}
+.form-control input{
+    width: 100%;
+    display: block;
+    background-color: transparent;
+    border: 0;
+    border-bottom: 2px solid white;
+    font-size: 18px;
+    color: white;
+}
+.form-control input:focus, .form-control input:valid{
+    outline: none;
+}
+.container .btn{
+    margin: 10px auto;
+    padding: 5px 20px;
+    font-size: 20px;
+    width: 100%;
+    display: inline-block;
+    background-color: lightskyblue;
+    border-radius: 5px;
+    border: none;
+    color: white;
+}
+/*按鍵按下去時候，要取消他周圍的border必須用btn:focus {outline:none} */
+.container .btn:focus{
+    outline: none;
+}
+.container .btn:active{
+    /*scale(0.98)會讓按鍵按下去有立體感覺*/
+    transform: scale(0.98);
+    outline: none;
+    border: none;
+}
+p:last-child{
+    font-size: 20px;
+    padding: 10px;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color: lightgrey;
+}
+.form-control label{
+    position: absolute;
+    /*transform 也是要position:absolute之後才能使用嗎?*/
+    transform: translateY(-30px);
+}
