@@ -81,9 +81,11 @@ a{
     display: inline-block;
     font-size: 18px;
     min-width: 5px;
+    transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
-
+/* input 裡面一定要設定required 這個指令才會執行!*/
 .form-control input:focus + label span,
 .form-control input:valid + label span{ 
-    transform:translateY(-30px)
+    transform:translateY(-30px);
+  
 } 
